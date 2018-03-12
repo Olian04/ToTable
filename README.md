@@ -98,4 +98,4 @@ const html = ToTable({
 
 ## Example implementation
 
-https://jsfiddle.net/59v45m4o/20/
+https://jsfiddle.net/59v45m4o/47/
