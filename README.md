@@ -95,3 +95,7 @@ const html = ToTable({
     <td>50</td>
   </tr>
 </table>
+
+## Example implementation
+
+https://jsfiddle.net/59v45m4o/20/
