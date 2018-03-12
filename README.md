@@ -69,7 +69,7 @@ const html = ToTable(['lastname', 'age'], [
 import { ToTable } from 'totable';
 
 const html = ToTable({
-  name: 'firstname',
+  firstname: 'name',
   age: 'age'
 }, [
   { firstname: 'Oliver', lastname: 'Twist', age: 14 },
