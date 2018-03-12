@@ -37,15 +37,15 @@ html /*
 */
 ```
 
-## `ToTable(arrayOfObjects, arrayOfColumnNames)`
+## `ToTable(arrayOfColumnNames, arrayOfObjects)`
 ```js
 import { ToTable } from 'totable';
 
-const html = ToTable([
+const html = ToTable(['lastname', 'age'], [
   { firstname: 'Oliver', lastname: 'Twist', age: 14 }
   { firstname: 'Charles', lastname: 'Darwin', age: 78 }
   { firstname: 'Steven', lastname: 'Hawken', age: 50 }
-], ['lastname', 'age']);
+]);
 
 html /*
 <table>
@@ -69,18 +69,18 @@ html /*
 */
 ```
 
-## `ToTable(arrayOfObjects, objectOfColumnNameMappings)`
+## `ToTable(objectOfColumnNameMappings, arrayOfObjects)`
 ```js
 import { ToTable } from 'totable';
 
-const html = ToTable([
+const html = ToTable({
+  name: 'firstname',
+  age: 'age'
+}, [
   { firstname: 'Oliver', lastname: 'Twist', age: 14 }
   { firstname: 'Charles', lastname: 'Darwin', age: 78 }
   { firstname: 'Steven', lastname: 'Hawken', age: 50 }
-], {
-  name: 'firstname',
-  age: 'age'
-});
+]);
 
 html /*
 <table>
