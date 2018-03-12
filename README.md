@@ -1,5 +1,5 @@
 # ToTable
-A tiny library that generates html tables from arrays (or generators) of object data.
+A tiny library that generates html tables from arrays of objects.
 
 ## `ToTable(arrayOfObjects)`
 ```js
