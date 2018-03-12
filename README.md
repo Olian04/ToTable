@@ -6,8 +6,8 @@ A tiny library that generates html tables from arrays of objects.
 import { ToTable } from 'totable';
 
 const html = ToTable([
-  { firstname: 'Oliver', lastname: 'Twist', age: 14 }
-  { firstname: 'Charles', lastname: 'Darwin', age: 78 }
+  { firstname: 'Oliver', lastname: 'Twist', age: 14 },
+  { firstname: 'Charles', lastname: 'Darwin', age: 78 },
   { firstname: 'Steven', lastname: 'Hawken', age: 50 }
 ]);
 ```
@@ -39,8 +39,8 @@ const html = ToTable([
 import { ToTable } from 'totable';
 
 const html = ToTable(['lastname', 'age'], [
-  { firstname: 'Oliver', lastname: 'Twist', age: 14 }
-  { firstname: 'Charles', lastname: 'Darwin', age: 78 }
+  { firstname: 'Oliver', lastname: 'Twist', age: 14 },
+  { firstname: 'Charles', lastname: 'Darwin', age: 78 },
   { firstname: 'Steven', lastname: 'Hawken', age: 50 }
 ]);
 ```
@@ -72,8 +72,8 @@ const html = ToTable({
   name: 'firstname',
   age: 'age'
 }, [
-  { firstname: 'Oliver', lastname: 'Twist', age: 14 }
-  { firstname: 'Charles', lastname: 'Darwin', age: 78 }
+  { firstname: 'Oliver', lastname: 'Twist', age: 14 },
+  { firstname: 'Charles', lastname: 'Darwin', age: 78 },
   { firstname: 'Steven', lastname: 'Hawken', age: 50 }
 ]);
 ```
