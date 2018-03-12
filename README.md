@@ -10,8 +10,7 @@ const html = ToTable([
   { firstname: 'Charles', lastname: 'Darwin', age: 78 }
   { firstname: 'Steven', lastname: 'Hawken', age: 50 }
 ]);
-
-html /*
+```
 <table>
   <tr>
     <th>Firstname</th>
@@ -34,8 +33,6 @@ html /*
     <td>50</td>
   </tr>
 </table>
-*/
-```
 
 ## `ToTable(arrayOfColumnNames, arrayOfObjects)`
 ```js
@@ -46,8 +43,7 @@ const html = ToTable(['lastname', 'age'], [
   { firstname: 'Charles', lastname: 'Darwin', age: 78 }
   { firstname: 'Steven', lastname: 'Hawken', age: 50 }
 ]);
-
-html /*
+```
 <table>
   <tr>
     <th>Lastname</th> 
@@ -66,8 +62,7 @@ html /*
     <td>50</td>
   </tr>
 </table>
-*/
-```
+
 
 ## `ToTable(objectOfColumnNameMappings, arrayOfObjects)`
 ```js
@@ -81,8 +76,7 @@ const html = ToTable({
   { firstname: 'Charles', lastname: 'Darwin', age: 78 }
   { firstname: 'Steven', lastname: 'Hawken', age: 50 }
 ]);
-
-html /*
+```
 <table>
   <tr>
     <th>name</th> 
@@ -101,5 +95,3 @@ html /*
     <td>50</td>
   </tr>
 </table>
-*/
-```
