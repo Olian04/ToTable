@@ -3,15 +3,12 @@
   "version": "1.0.4",
   "description": "A tiny library that generates html tables from arrays of objects.",
   "main": "src/ToTable.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Olian04/ToTable.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["html", "javascript", "web", "visualization", "table"],
+  "author": "Olian04",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Olian04/ToTable/issues"
