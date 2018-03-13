@@ -1,6 +1,6 @@
 {
   "name": "totable",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A tiny library that generates html tables from arrays of objects.",
   "main": "src/ToTable.js",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Olian04/ToTable/issues"
   },
