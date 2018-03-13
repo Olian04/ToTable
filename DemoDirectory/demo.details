@@ -7,4 +7,5 @@
    - https://cdn.rawgit.com/Olian04/ToTable/d126873e/src/ToTable.js
    - https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.css
  normalize_css: no
+ load_type: onDomready
  ...
