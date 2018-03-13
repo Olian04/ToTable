@@ -3,9 +3,16 @@ A tiny library that generates html tables from arrays of objects.
 
 No funny businesses, no dependencies, no transpilation, just ~50 lines of vanilla js.
 
-## Install
+## NPM
 ```
 npm i --save totable
+```
+
+## CDN
+
+```html
+<script src="https://cdn.rawgit.com/Olian04/ToTable/d126873e/src/ToTable.js"></script>
+
 ```
 
 ## `ToTable(arrayOfObjects)`
