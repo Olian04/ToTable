@@ -1,9 +1,15 @@
 # ToTable
 A tiny library that generates html tables from arrays of objects.
+No funny businesses, no dependencies, no transpilation, just ~50 lines of vanilla js.
+
+## Install
+```
+npm i --save totable
+```
 
 ## `ToTable(arrayOfObjects)`
 ```js
-import { ToTable } from 'totable';
+const ToTable = require('totable');
 
 const html = ToTable([
   { firstname: 'Oliver', lastname: 'Twist', age: 14 },
@@ -36,7 +42,7 @@ const html = ToTable([
 
 ## `ToTable(arrayOfColumnNames, arrayOfObjects)`
 ```js
-import { ToTable } from 'totable';
+const ToTable = require('totable');
 
 const html = ToTable(['lastname', 'age'], [
   { firstname: 'Oliver', lastname: 'Twist', age: 14 },
@@ -66,7 +72,7 @@ const html = ToTable(['lastname', 'age'], [
 
 ## `ToTable(objectOfColumnNameMappings, arrayOfObjects)`
 ```js
-import { ToTable } from 'totable';
+const ToTable = require('totable');
 
 const html = ToTable({
   firstname: 'name',
@@ -95,7 +101,3 @@ const html = ToTable({
     <td>50</td>
   </tr>
 </table>
-
-## Example implementation
-
-https://jsfiddle.net/59v45m4o/47/
