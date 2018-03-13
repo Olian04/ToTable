@@ -1,57 +1,53 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.css">
 <script src="./src/ToTable.js"></script>
-<script>
-    
-    document.write(`
-    <h2>ToTable(arrayOfObjects)</h2>
-    <pre>
-    ToTable([
-        { firstname: 'Oliver', lastname: 'Twist', age: 14 },
-        { firstname: 'Charles', lastname: 'Darwin', age: 78 },
-        { firstname: 'Steven', lastname: 'Hawken', age: 50 }
-    ])
-    </pre>
-    ${ToTable([
-        { firstname: 'Oliver', lastname: 'Twist', age: 14 },
-        { firstname: 'Charles', lastname: 'Darwin', age: 78 },
-        { firstname: 'Steven', lastname: 'Hawken', age: 50 }
-    ])}
-    <hr>`);
-    
-    document.write(`
-    <h2>ToTable(arrayOfColumnNames, arrayOfObjects)</h2>
-    <pre>
-    ToTable(['lastname', 'age'], [
-        { firstname: 'Oliver', lastname: 'Twist', age: 14 },
-        { firstname: 'Charles', lastname: 'Darwin', age: 78 },
-        { firstname: 'Steven', lastname: 'Hawken', age: 50 }
-    ])
-    </pre>
-    ${ToTable(['lastname', 'age'], [
-        { firstname: 'Oliver', lastname: 'Twist', age: 14 },
-        { firstname: 'Charles', lastname: 'Darwin', age: 78 },
-        { firstname: 'Steven', lastname: 'Hawken', age: 50 }
-    ])}
-    <hr>`);
+<div class="markdown-body">
+    <script>
+        document.write(`
+        <h2>ToTable(arrayOfObjects)</h2>
+        <pre>ToTable([
+    { firstname: 'Oliver', lastname: 'Twist', age: 14 },
+    { firstname: 'Charles', lastname: 'Darwin', age: 78 },
+    { firstname: 'Steven', lastname: 'Hawken', age: 50 }
+])</pre>
+        ${ToTable([
+            { firstname: 'Oliver', lastname: 'Twist', age: 14 },
+            { firstname: 'Charles', lastname: 'Darwin', age: 78 },
+            { firstname: 'Steven', lastname: 'Hawken', age: 50 }
+        ])}
+        <hr>`);
+        
+        document.write(`
+        <h2>ToTable(arrayOfColumnNames, arrayOfObjects)</h2>
+        <pre>ToTable(['lastname', 'age'], [
+    { firstname: 'Oliver', lastname: 'Twist', age: 14 },
+    { firstname: 'Charles', lastname: 'Darwin', age: 78 },
+    { firstname: 'Steven', lastname: 'Hawken', age: 50 }
+])</pre>
+        ${ToTable(['lastname', 'age'], [
+            { firstname: 'Oliver', lastname: 'Twist', age: 14 },
+            { firstname: 'Charles', lastname: 'Darwin', age: 78 },
+            { firstname: 'Steven', lastname: 'Hawken', age: 50 }
+        ])}
+        <hr>`);
 
-    document.write(`
-    <h2>ToTable(objectOfColumnNameMappings, arrayOfObjects)</h2>
-    <pre>
-    ToTable({
-        firstname: 'name',
-        age: 'age'
-    }, [
-        { firstname: 'Oliver', lastname: 'Twist', age: 14 },
-        { firstname: 'Charles', lastname: 'Darwin', age: 78 },
-        { firstname: 'Steven', lastname: 'Hawken', age: 50 }
-    ])
-    </pre>
-    ${ToTable({
-        firstname: 'name',
-        age: 'age'
-    }, [
-        { firstname: 'Oliver', lastname: 'Twist', age: 14 },
-        { firstname: 'Charles', lastname: 'Darwin', age: 78 },
-        { firstname: 'Steven', lastname: 'Hawken', age: 50 }
-    ])}`);
+        document.write(`
+        <h2>ToTable(objectOfColumnNameMappings, arrayOfObjects)</h2>
+        <pre>ToTable({
+    firstname: 'name',
+    age: 'age'
+}, [
+    { firstname: 'Oliver', lastname: 'Twist', age: 14 },
+    { firstname: 'Charles', lastname: 'Darwin', age: 78 },
+    { firstname: 'Steven', lastname: 'Hawken', age: 50 }
+])</pre>
+        ${ToTable({
+            firstname: 'name',
+            age: 'age'
+        }, [
+            { firstname: 'Oliver', lastname: 'Twist', age: 14 },
+            { firstname: 'Charles', lastname: 'Darwin', age: 78 },
+            { firstname: 'Steven', lastname: 'Hawken', age: 50 }
+        ])}`);
 
-</script>
+    </script>
+</div>
