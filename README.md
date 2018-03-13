@@ -1,4 +1,4 @@
-# ToTable
+# [ToTable](https://www.npmjs.com/package/totable)
 A tiny library that generates html tables from arrays of objects.
 
 No funny businesses, no dependencies, no transpilation, just ~50 lines of vanilla js.
