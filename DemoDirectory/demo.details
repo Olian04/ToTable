@@ -1,1 +1,7 @@
-
+---
+ name: ToTable
+ description: A small demo for a small package
+ authors:
+   - Olian04
+ normalize_css: no
+ ...
