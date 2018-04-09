@@ -4,7 +4,7 @@
  authors:
    - Olian04
  resources:
-   - https://https://unpkg.com/totable
+   - https://unpkg.com/totable
    - https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.css
  normalize_css: no
  js_wrap: d
