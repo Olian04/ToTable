@@ -13,7 +13,7 @@ npm i --save totable
 ## CDN
 
 ```html
-<script src="https://https://unpkg.com/totable"></script>
+<script src="https://unpkg.com/totable"></script>
 ```
 
 ## `ToTable(arrayOfObjects)`
