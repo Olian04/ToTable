@@ -1,7 +1,7 @@
 # [ToTable](https://www.npmjs.com/package/totable)
-A tiny library that generates html tables from arrays of objects.
+ToTable is a tiny no-config-needed-library that generates html tables from arrays of objects.
 
-No funny businesses, no dependencies, no transpilation, just ~50 lines of vanilla js.
+Theres no funny businesses, no dependencies, no transpilation, just ~50 lines of vanilla js.
 
 [Demo Fiddle](https://jsfiddle.net/gh/get/library/pure/Olian04/ToTable/tree/master/demo)
 
@@ -13,8 +13,7 @@ npm i --save totable
 ## CDN
 
 ```html
-<script src="https://cdn.rawgit.com/Olian04/ToTable/d126873e/src/ToTable.js"></script>
-
+<script src="https://https://unpkg.com/totable"></script>
 ```
 
 ## `ToTable(arrayOfObjects)`
