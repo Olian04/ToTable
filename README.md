@@ -20,7 +20,7 @@ npm i --save totable
 ```js
 const ToTable = require('totable');
 
-const html = ToTable([
+const tableElement = ToTable([
   { firstname: 'Oliver', lastname: 'Twist', age: 14 },
   { firstname: 'Charles', lastname: 'Darwin', age: 78 },
   { firstname: 'Steven', lastname: 'Hawken', age: 50 }
@@ -53,7 +53,7 @@ const html = ToTable([
 ```js
 const ToTable = require('totable');
 
-const html = ToTable(['lastname', 'age'], [
+const tableElement = ToTable(['lastname', 'age'], [
   { firstname: 'Oliver', lastname: 'Twist', age: 14 },
   { firstname: 'Charles', lastname: 'Darwin', age: 78 },
   { firstname: 'Steven', lastname: 'Hawken', age: 50 }
@@ -83,7 +83,7 @@ const html = ToTable(['lastname', 'age'], [
 ```js
 const ToTable = require('totable');
 
-const html = ToTable({
+const tableElement = ToTable({
   firstname: 'name',
   age: 'age'
 }, [
