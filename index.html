@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.css">
+</head>
+<body>
+    <div class="markdown-body">
+        <div id="table1"></div>
+        <div id="table2"></div>
+        <div id="table3"></div>
+    </div>
+              
+    <script src="./src/ToTable.js"></script>
+    <script>
+        document.querySelector('#table1').appendChild( 
+            ToTable([
+                { firstname: 'Oliver', lastname: 'Twist', age: 14 },
+                { firstname: 'Charles', lastname: 'Darwin', age: 78 },
+                { firstname: 'Steven', lastname: 'Hawken', age: 50 }
+            ])
+        );
+
+        document.querySelector('#table2').appendChild( 
+            ToTable(['lastname', 'age'], [
+                { firstname: 'Oliver', lastname: 'Twist', age: 14 },
+                { firstname: 'Charles', lastname: 'Darwin', age: 78 },
+                { firstname: 'Steven', lastname: 'Hawken', age: 50 }
+            ])
+        );
+
+        document.querySelector('#table3').appendChild( 
+            ToTable({
+                firstname: 'name',
+                age: 'age'
+            }, [
+                { firstname: 'Oliver', lastname: 'Twist', age: 14 },
+                { firstname: 'Charles', lastname: 'Darwin', age: 78 },
+                { firstname: 'Steven', lastname: 'Hawken', age: 50 }
+            ])
+        );
+    </script>
+</body>
+</html>
