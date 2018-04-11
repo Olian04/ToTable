@@ -1,3 +1,9 @@
+// Constants
+const ARROW_UP = '&#11165;';
+const ARROW_DOWN = '&#11167;';
+
+
+// Helper methods
 function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -13,7 +19,32 @@ function generateColumnMap(keys)  {
   }, {});
 }
 
-function ToTable(...args) {
+function appendMany(parent, children) {
+  children.forEach(v => {
+    parent.appendChild(v);
+  });
+  return parent;
+}
+
+function append(parent, child) {
+  parent.appendChild(child);
+  return parent;
+}
+
+const wrap = type => data => {
+  const elem = document.createElement('' + type);
+  elem.innerHTML = data;
+  return elem;
+};
+
+
+// API
+const ToTable = (...args) => ToTable__(args, false);
+const ToTableRaw = (...args) => ToTable__(args, true);
+
+
+// Implementation
+function ToTable__(args, isRaw) {
   // Type check
   switch (args.length) {
     case 1: 
@@ -39,26 +70,11 @@ function ToTable(...args) {
     [columnMap, data] = args;
   }
 
+  if (isRaw) {
+    return ToTableRaw_(columnMap, data);
+  }
   return ToTable_(columnMap, data); 
 }
-
-function appendMany(parent, children) {
-  children.forEach(v => {
-    parent.appendChild(v);
-  });
-  return parent;
-}
-
-function append(parent, child) {
-  parent.appendChild(child);
-  return parent;
-}
-
-const wrap = type => data => {
-  const elem = document.createElement('' + type);
-  elem.innerHTML = data;
-  return elem;
-};
 
 function ToTable_(columnMap, data) {
 	const columnNames = Object.values(columnMap);	
@@ -84,13 +100,38 @@ function ToTable_(columnMap, data) {
       )
     ]
   );
-
 }
 
+const ToTableRaw_ = (columnMap, data) => 
+  appendMany(document.createElement('table'), 
+    [
+      append(document.createElement('tbody'),
+        appendMany(document.createElement('tr'), 
+          Object.values(columnMap)
+            .map(wrap('th'))
+        )
+      ),
+      appendMany(document.createElement('tbody'),
+        data.map(d => 
+          appendMany(document.createElement('tr'),
+            Object.keys(d)
+              .filter(k => Object.keys(columnMap).indexOf(k) >= 0)
+              .map(k => d[k])
+              .map(wrap('td'))
+          )
+        )
+      )
+    ]
+  );
+
+
+// Exports
 if (module) {
   module.exports = ToTable;
   module.exports.ToTable = ToTable;
+  module.exports.ToTableRaw = ToTableRaw;
 } 
 if (global) {
   global.ToTable = ToTable;
+  global.ToTableRaw = ToTableRaw;
 }
