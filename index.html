@@ -13,6 +13,10 @@
         <div id="table1"></div>
         <div id="table2"></div>
         <div id="table3"></div>
+        <hr>
+        <div id="table4"></div>
+        <div id="table5"></div>
+        <div id="table6"></div>
     </div>
               
     <script src="./src/ToTable.js"></script>
@@ -43,6 +47,34 @@
                 { firstname: 'Steven', lastname: 'Hawken', age: 50 }
             ])
         );
+
+
+        document.querySelector('#table4').appendChild( 
+                ToTableRaw([
+                    { firstname: 'Oliver', lastname: 'Twist', age: 14 },
+                    { firstname: 'Charles', lastname: 'Darwin', age: 78 },
+                    { firstname: 'Steven', lastname: 'Hawken', age: 50 }
+                ])
+            );
+    
+            document.querySelector('#table5').appendChild( 
+                ToTableRaw(['lastname', 'age'], [
+                    { firstname: 'Oliver', lastname: 'Twist', age: 14 },
+                    { firstname: 'Charles', lastname: 'Darwin', age: 78 },
+                    { firstname: 'Steven', lastname: 'Hawken', age: 50 }
+                ])
+            );
+    
+            document.querySelector('#table6').appendChild( 
+                ToTableRaw({
+                    firstname: 'name',
+                    age: 'age'
+                }, [
+                    { firstname: 'Oliver', lastname: 'Twist', age: 14 },
+                    { firstname: 'Charles', lastname: 'Darwin', age: 78 },
+                    { firstname: 'Steven', lastname: 'Hawken', age: 50 }
+                ])
+            );
     </script>
 </body>
 </html>
