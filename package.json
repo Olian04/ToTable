@@ -1,6 +1,6 @@
 {
   "name": "totable",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "A tiny library that generates html tables from arrays of objects.",
   "types": "./src/ToTable.d.ts",
   "main": "./src/ToTable.js",
