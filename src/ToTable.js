@@ -1,3 +1,5 @@
+//@ts-check
+
 // Constants
 const ARROW_UP = '&#11165;';
 const ARROW_DOWN = '&#11167;';
@@ -48,11 +50,11 @@ function ToTable__(args, isRaw) {
   // Type check
   switch (args.length) {
     case 1: 
-      if (!Array.isArray(args[0])) throw ('Expected first argument to be of type "array" but got "' + typeof data + '"'); 
+      if (!Array.isArray(args[0])) throw ('Expected first argument to be of type "array" but got "' + typeof args[0] + '"'); 
       break;
     case 2: 
-      if (typeof args[0] !== 'object') throw ('Expected first argument to be of type "array" or of type "object" but got "' + typeof keys + '"'); 
-      if (!Array.isArray(args[1])) throw ('Expected second argument to be of type "array" but got "' + typeof data + '"'); 
+      if (typeof args[0] !== 'object') throw ('Expected first argument to be of type "array" or of type "object" but got "' + typeof args[0] + '"'); 
+      if (!Array.isArray(args[1])) throw ('Expected second argument to be of type "array" but got "' + typeof args[1] + '"'); 
       break;
   }
 
@@ -77,12 +79,13 @@ function ToTable__(args, isRaw) {
 }
 
 function ToTable_(columnMap, data) {
+  //@ts-ignore
 	const columnNames = Object.values(columnMap);	
   const columnKeys = Object.keys(columnMap);
 
   return appendMany(document.createElement('table'), 
     [
-      append(document.createElement('tbody'),
+      append(document.createElement('thead'),
         appendMany(document.createElement('tr'), 
           columnNames
             .map(wrap('th'))
@@ -105,8 +108,9 @@ function ToTable_(columnMap, data) {
 const ToTableRaw_ = (columnMap, data) => 
   appendMany(document.createElement('table'), 
     [
-      append(document.createElement('tbody'),
+      append(document.createElement('thead'),
         appendMany(document.createElement('tr'), 
+          //@ts-ignore
           Object.values(columnMap)
             .map(wrap('th'))
         )
@@ -127,11 +131,14 @@ const ToTableRaw_ = (columnMap, data) =>
 
 // Exports
 if (module) {
+  //@ts-ignore
   module.exports = ToTable;
   module.exports.ToTable = ToTable;
   module.exports.ToTableRaw = ToTableRaw;
 } 
 if (global) {
+  //@ts-ignore
   global.ToTable = ToTable;
+  //@ts-ignore
   global.ToTableRaw = ToTableRaw;
 }

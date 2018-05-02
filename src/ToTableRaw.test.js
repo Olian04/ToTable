@@ -31,8 +31,8 @@ describe('Happy paths', () => {
         ).to.equal('TBODY');
     }
 
-    it('ToTable( object[] )', () => {
-        const table = ToTable([
+    it('ToTableRaw( object[] )', () => {
+        const table = ToTableRaw([
             { firstname: 'Oliver', lastname: 'Twist', age: 14 },
             { firstname: 'Charles', lastname: 'Darwin', age: 78 },
             { firstname: 'Steven', lastname: 'Hawken', age: 50 }
@@ -55,8 +55,8 @@ describe('Happy paths', () => {
         expect(rows[8].innerHTML).equal('50');
     });
 
-    it('ToTable( string[], object[] )', () => {
-        const table = ToTable(['firstname', 'age'], [
+    it('ToTableRaw( string[], object[] )', () => {
+        const table = ToTableRaw(['firstname', 'age'], [
             { firstname: 'Oliver', lastname: 'Twist', age: 14 },
             { firstname: 'Charles', lastname: 'Darwin', age: 78 },
             { firstname: 'Steven', lastname: 'Hawken', age: 50 }
@@ -75,8 +75,8 @@ describe('Happy paths', () => {
         expect(rows[5].innerHTML).equal('50');
     });
 
-    it('ToTable( object, object[] )', () => {
-        const table =   ToTable({
+    it('ToTableRaw( object, object[] )', () => {
+        const table =   ToTableRaw({
             firstname: 'name',
             age: 'age'
         }, [
