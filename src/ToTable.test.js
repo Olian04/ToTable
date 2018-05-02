@@ -1,3 +1,5 @@
+//@ts-check
+
 import { expect } from 'chai';
 import { JSDOM } from 'jsdom';
 import jsdom from 'mocha-jsdom';
@@ -8,7 +10,7 @@ describe('ToTable', () => {
     jsdom();
 
     it('ToTable([ ... ])', () => {
-        const html = ToTable([
+        const table = ToTable([
             { firstname: 'Oliver', lastname: 'Twist', age: 14 },
             { firstname: 'Charles', lastname: 'Darwin', age: 78 },
             { firstname: 'Steven', lastname: 'Hawken', age: 50 }
