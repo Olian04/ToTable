@@ -39,9 +39,9 @@ describe('Happy paths', () => {
         ]);
         base(table);
         const columns = document.querySelectorAll('th');
-        expect(columns[0].innerHTML).equal('Firstname');
-        expect(columns[1].innerHTML).equal('Lastname');
-        expect(columns[2].innerHTML).equal('Age');
+        expect(columns[0].innerHTML).contain('Firstname');
+        expect(columns[1].innerHTML).contain('Lastname');
+        expect(columns[2].innerHTML).contain('Age');
 
         const rows = document.querySelectorAll('td');
         expect(rows[0].innerHTML).equal('Oliver');
@@ -63,8 +63,8 @@ describe('Happy paths', () => {
         ]);
         base(table);
         const columns = document.querySelectorAll('th');
-        expect(columns[0].innerHTML).equal('Firstname');
-        expect(columns[1].innerHTML).equal('Age');
+        expect(columns[0].innerHTML).contain('Firstname');
+        expect(columns[1].innerHTML).contain('Age');
 
         const rows = document.querySelectorAll('td');
         expect(rows[0].innerHTML).equal('Oliver');
@@ -86,8 +86,8 @@ describe('Happy paths', () => {
         ])
         base(table);
         const columns = document.querySelectorAll('th');
-        expect(columns[0].innerHTML).equal('name');
-        expect(columns[1].innerHTML).equal('age');
+        expect(columns[0].innerHTML).contain('name');
+        expect(columns[1].innerHTML).contain('age');
 
         const rows = document.querySelectorAll('td');
         expect(rows[0].innerHTML).equal('Oliver');

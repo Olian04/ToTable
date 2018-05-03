@@ -83,26 +83,72 @@ function ToTable_(columnMap, data) {
 	const columnNames = Object.values(columnMap);	
   const columnKeys = Object.keys(columnMap);
 
-  return appendMany(document.createElement('table'), 
-    [
-      append(document.createElement('thead'),
-        appendMany(document.createElement('tr'), 
-          columnNames
-            .map(wrap('th'))
-        )
-      ),
-      appendMany(document.createElement('tbody'),
-        data.map(d => 
+  // Set these to change sorting behavior
+  let sortOn = '';
+  let sortDirection = 1;
+
+  const table = document.createElement('table');
+  const head = document.createElement('thead');
+  const body = document.createElement('tbody');
+  table.appendChild(head);
+  table.appendChild(body);
+
+  const update = () => {
+    console.log(columnMap);
+    head.innerHTML = '';
+    head.appendChild(appendMany(document.createElement('tr'), 
+      columnNames
+        .map(name => {
+          console.log(name, sortOn, columnMap[sortOn])
+          const th = document.createElement('th');
+          if (sortOn === '') {
+            th.innerHTML = name;
+          } else if (name.toUpperCase() === columnMap[sortOn].toUpperCase()) {
+            th.innerHTML = `${name} ${sortDirection === 1 ? ARROW_UP : ARROW_DOWN}`;
+          } else {
+            th.innerHTML = name;
+          }
+          th.onclick = () => {
+            if (name.toUpperCase() !== sortOn.toUpperCase()) {
+              sortOn = Object.keys(columnMap).filter(k => columnMap[k].toLowerCase() === name.toLowerCase())[0].toLowerCase();
+              console.log(sortOn)
+              sortDirection = 1;
+            } else {
+              sortDirection *= -1;
+            }
+            update();
+          }
+          return th;
+        })
+    ));
+    body.innerHTML = '';
+    appendMany(body,
+      data
+        .sort((a, b) => {
+          if (sortOn === '') return 0;
+          const A = a[sortOn].toString().toUpperCase();
+          const B = b[sortOn].toString().toUpperCase();
+          if (A < B) {
+            return -1 * sortDirection;
+          }
+          if (A > B) {
+            return 1 * sortDirection;
+          }
+          return 0;
+        })
+        .map(d => 
           appendMany(document.createElement('tr'),
             Object.keys(d)
               .filter(k => columnKeys.indexOf(k) >= 0)
               .map(k => d[k])
               .map(wrap('td'))
           )
-        )
       )
-    ]
-  );
+    )
+  }
+
+  update();
+  return table;
 }
 
 const ToTableRaw_ = (columnMap, data) => 
@@ -128,17 +174,15 @@ const ToTableRaw_ = (columnMap, data) =>
     ]
   );
 
-
 // Exports
 if (module) {
   //@ts-ignore
   module.exports = ToTable;
   module.exports.ToTable = ToTable;
   module.exports.ToTableRaw = ToTableRaw;
-} 
-if (global) {
-  //@ts-ignore
-  global.ToTable = ToTable;
-  //@ts-ignore
-  global.ToTableRaw = ToTableRaw;
+} else if (window) {
+   //@ts-ignore
+   window.ToTable = ToTable;
+   //@ts-ignore
+   window.ToTableRaw = ToTableRaw;
 }
